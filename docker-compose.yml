@@ -1,0 +1,41 @@
+version: '3'
+services:
+    app1:
+      image: bhavna
+      ports:
+      - "9001:3000"
+    app2:
+      image: bhavna
+      ports:
+      - "9002:3000"
+    app3:
+      image: bhavna
+      ports:
+      - "9003:3000"
+    app4:
+      image: bhavna
+      ports:
+      - "9004:3000"
+    app5:
+      image: bhavna
+      ports:
+      - "9005:3000"
+    nginx:
+      image: bhavna
+      ports:
+      - "9000:3000"
+
+
+    mysqldb:
+      image: mysql
+      ports:
+      - "3306:3000"
+      environment:
+      - MYSQL_ROOT_PASSWORD=p@ssw0rd1
+      volumes:
+      - mysql:/var/lib/mysql
+      - mysql_config:/etc/mysql
+
+volumes:
+  mysql:
+  mysql_config:
